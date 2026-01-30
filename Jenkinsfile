@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        MVN_TAG = '3.9.5-eclipse-temurin-17'
-        MVN_ARGS = ''
+        MVN_TAG = '3.9-eclipse-temurin-17'
+        MVN_ARGS = '-v /var/lib/jenkins/.m2:/.m2'
         MVN_CMD = 'mvn'
         MVN_CMD_ARGS = ''
     }
