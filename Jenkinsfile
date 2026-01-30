@@ -5,7 +5,6 @@ pipeline {
         MVN_TAG = '3.9-eclipse-temurin-17'
         MVN_ARGS = '-v /var/lib/jenkins/.m2:/.m2'
         MVN_CMD = 'mvn'
-        MVN_CMD_ARGS = ''
     }
     
     stages {
@@ -23,7 +22,7 @@ pipeline {
                     
                     docker.image("maven:${env.MVN_TAG}").inside(containerArgs) {
                         echo 'Executing unit tests with coverage report'
-                        sh "${MVN_CMD} clean verify ${MVN_CMD_ARGS}"
+                        sh "${MVN_CMD} clean verify"
                     }
                 }
             }
